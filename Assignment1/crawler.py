@@ -20,6 +20,7 @@ for user in test:
     f.write("User Name: " + user.name + "\n")
     f.write("User Description: " + user.description + "\n")
     f.write("Number of Followers: %d\n" % user.followers_count)
+    f.write("Number of Friends: %d\n" % user.friends_count)
     f.write("Number of Statuses: %d\n" % user.statuses_count)
     f.write("User's URL: " + user.url + "\n")
     f.write("\n")
