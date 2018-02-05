@@ -13,32 +13,32 @@ auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 api = tweepy.API(auth)
 test = api.lookup_users(user_ids=['34373370, 26257166, 12579252'])
 
-# f = open('user_info.txt', 'w')
-#
-# for user in test:
-#     f.write("Screen Name: " + user.screen_name + "\n")
-#     f.write("User Name: " + user.name + "\n")
-#     f.write("User Description: " + user.description + "\n")
-#     f.write("Number of Followers: %d\n" % user.followers_count)
-#     f.write("Number of Friends: %d\n" % user.friends_count)
-#     f.write("Number of Statuses: %d\n" % user.statuses_count)
-#     f.write("User's URL: " + user.url + "\n")
-#     f.write("\n")
-#
-# f.close()
-#
-# f = open('user_network.txt', 'w')
-# for user in test:
-#     user_followers = tweepy.Cursor(api.followers, screen_name=user.screen_name).items(20)
-#     f.write("\nThe Followers List:\n\n")
-#     for u in user_followers:
-#         f.write(u.screen_name + "\n")
-#     user_friends = tweepy.Cursor(api.friends, screen_name=user.screen_name).items(20)
-#     f.write("\nThe Friends List:\n\n")
-#     for u in user_friends:
-#         f.write(u.screen_name + "\n")
-#
-# f.close()
+f = open('user_info.txt', 'w')
+
+for user in test:
+    f.write("Screen Name: " + user.screen_name + "\n")
+    f.write("User Name: " + user.name + "\n")
+    f.write("User Description: " + user.description + "\n")
+    f.write("Number of Followers: %d\n" % user.followers_count)
+    f.write("Number of Friends: %d\n" % user.friends_count)
+    f.write("Number of Statuses: %d\n" % user.statuses_count)
+    f.write("User's URL: " + user.url + "\n")
+    f.write("\n")
+
+f.close()
+
+f = open('user_network.txt', 'w')
+for user in test:
+    user_followers = tweepy.Cursor(api.followers, screen_name=user.screen_name).items(20)
+    f.write("\nThe Followers List:\n\n")
+    for u in user_followers:
+        f.write(u.screen_name + "\n")
+    user_friends = tweepy.Cursor(api.friends, screen_name=user.screen_name).items(20)
+    f.write("\nThe Friends List:\n\n")
+    for u in user_friends:
+        f.write(u.screen_name + "\n")
+
+f.close()
 
 f = open('keyword_tweets.txt', 'w')
 query = '"Indiana" OR "weather"'
